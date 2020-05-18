@@ -3,7 +3,7 @@
 ### Problem 1 (5 points)
 An interesting way of calculating pi is to use a technique known as Monte Carlo, which involves randomization. This technique works as follows: Suppose you have a circle inscribed within a square, as shown in Figure 4.1.
 
-![Monte Carlo](https://d2vlcm61l7u1fs.cloudfront.net/media%2F7b4%2F7b4f3456-ad11-4241-8760-9fdbd48f6221%2FphpwBby1E.png)
+![Monte Carlo](https://d2vlcm61l7u1fs.cloudfront.net/media%2F7b4%2F7b4f3456-ad11-4241-8760-9fdbd48f6221%2FphpwBby1E.png?raw=true "Figure 1")
 
 
 (Assume that the radius of this circle is 1.) First, generate a series of random points as simple (x, y) coordinates. These points must fall within the Cartesian coordinates that bound the square. Of the total number of random points that are generated, some will occur within the circle. Next, estimate pi by performing the following calculation:
