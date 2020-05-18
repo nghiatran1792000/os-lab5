@@ -1,28 +1,23 @@
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define NUM_THREADS 5
+#include <math.h>
+#include <time.h>
 
-void *PrintHello(void *threadid) {
-    long tid ;
-    tid = (long)threadid ;
-    printf("Hello World! It ’s me, thread #%ld!\n" , tid);
-    pthread_exit(NULL);
-}
-
-int main (int argc , char *argv []) {
-    pthread_t threads[NUM_THREADS];
-    int rc ;
-    long t ;
-    for(t=0; t<NUM_THREADS; t++){
-        printf("In␣main:␣creating␣thread␣%ld\n" , t );
-        rc = pthread_create(&threads[t] ,NULL, PrintHello , (void *)t);
-        if (rc){
-            printf("ERROR;␣return␣from␣pthread_create()␣is␣%d\n" , rc );
-            exit(-1);
+int main(int argc, char* argv[]) {
+    long int amtWanted = atoi(argv[1]);
+    long int totalPts = 0;
+    time_t start = time(NULL);
+    unsigned int rand_state = rand();
+    for (int i = 0; i < amtWanted; i++) {
+        double X = rand_r(&rand_state) / ((double)RAND_MAX + 1) * 2.0 - 1.0;
+        double Y = rand_r(&rand_state) / ((double)RAND_MAX + 1) * 2.0 - 1.0;
+        if ((X * X + Y * Y) <= 1) {
+            totalPts++;
         }
     }
-
-    /* Last thing that main() should do */
-    pthread_exit(NULL);
+    double point = 4 * totalPts;
+    double pi = point / amtWanted;
+    printf("pi = %f\n", pi);
+    printf("Time: %d sec\n", (unsigned int)(time(NULL) - start));
 }
