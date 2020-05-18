@@ -2,12 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <time.h>
 
 int main(int argc, char* argv[]) {
     long int amtWanted = atoi(argv[1]);
     long int totalPts = 0;
-    time_t start = time(NULL);
     unsigned int rand_state = rand();
     for (int i = 0; i < amtWanted; i++) {
         double X = rand_r(&rand_state) / ((double)RAND_MAX + 1) * 2.0 - 1.0;
@@ -18,6 +16,5 @@ int main(int argc, char* argv[]) {
     }
     double point = 4 * totalPts;
     double pi = point / amtWanted;
-    printf("pi = %f\n", pi);
-    printf("Time: %d sec\n", (unsigned int)(time(NULL) - start));
+    printf("Pi: %f\n", pi);
 }
