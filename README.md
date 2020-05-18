@@ -16,7 +16,7 @@ As a general rule, the greater the number of points, the closer the approximatio
 Write two programs implementing algorithm describe above (one serial version and one multi-thread version). The program takes the number of points to be generated from user then creates multiple threads to approximate pi. Put all of your code in two files named “pi_serial.c” and “pi_multi-thread.c”. The number of points is passed to your program as an input parameter. For example, if your executable file is pi then to have your program calculate pi by generating one million points, we will use the follows command:
 
 ```sh
-./pi_ se rial 1000000
+./pi_serial 1000000
 ./pi_multi−thread 1000000
 ```
 
